@@ -710,7 +710,7 @@ def get_masks(p, iscell=None, rpad=20):
 
     # remove big masks
     uniq, counts = fastremap.unique(M0, return_counts=True)
-    big = np.prod(shape0) * 0.4
+    big = np.prod(shape0) * 0.8
     bigc = uniq[counts > big]
     if len(bigc) > 0 and (len(bigc)>1 or bigc[0]!=0):
         M0 = fastremap.mask(M0, bigc)
